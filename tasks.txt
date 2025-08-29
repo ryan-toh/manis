@@ -9,7 +9,7 @@ Goal: make the repo run, add the basic sanitize.py command.
 Files: src/cli/sanitize.py, README.md, basic tests.
 
 
-Person B — Read CSV (+ sampling)
+Person B — Read CSV (+ sampling) JUSTIN LEE TZE WEN
 Branch name: feat/read-csv
 
 
@@ -40,7 +40,7 @@ Files: src/transform/redact.py, test that counts replacements.
 
 
 Person E — Names via NER (+ optional Streamlit UI if time)
-Branch name: feat/ner-names
+Branch name: feat/ner-names TOH JUN YEEN RYAN
 
 
 Goal: use spaCy or a HF model to find names/orgs/locations in text columns.
