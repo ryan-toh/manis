@@ -29,7 +29,7 @@ Goal: detect emails, phones, credit cards, IPs using regex.
 Files: src/detect/regex.py, tests with a few fake examples.
 
 
-Person D — Redaction
+Person D — Redaction OR FU XIANG
 Branch name: feat/redact
 
 
