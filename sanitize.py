@@ -2,10 +2,10 @@ import argparse
 from typing import Optional
 import pandas as pd
 
-from pipeline.ingest import read_csv, get_text_columns
-from detect.regex import detect_regex
-from detect.ner import load_ner, detect_ner
-from transform.redact import apply_redactions, dedupe_overlaps
+from ingest import read_csv, get_text_columns
+from regex import detect_regex
+from ner import load_ner, detect_ner
+from redact import apply_redactions, dedupe_overlaps
 
 
 def sanitize_file(

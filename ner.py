@@ -108,16 +108,16 @@ df = pd.DataFrame({
 })
 
 
-# # Run detection
-# nlp = load_ner()
-# detections = detect_ner(
-#     df=df,
-#     text_columns=["notes", "comments"],
-#     model=nlp,
-#     labels=("PERSON", "ORG", "GPE")  # for NER part
-# )
+# Run detection
+nlp = load_ner()
+detections = detect_ner(
+    df=df,
+    text_columns=["notes", "comments"],
+    model=nlp,
+    labels=("PERSON", "ORG", "GPE")  # for NER part
+)
 
-# # Show results
-# for d in detections:
-#     print(d)
+# Show results
+for d in detections:
+    print(d)
 
