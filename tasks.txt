@@ -9,7 +9,7 @@ Goal: make the repo run, add the basic sanitize.py command.
 Files: src/cli/sanitize.py, README.md, basic tests.
 
 
-Person B — Read CSV (+ sampling)
+Person B — Read CSV (+ sampling) JUSTIN LEE TZE WEN
 Branch name: feat/read-csv
 
 
