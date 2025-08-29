@@ -1,17 +1,18 @@
 import re
 import pandas as pd
 from typing import List, Optional, Tuple
-from .common import Detection
+from common import Detection
 
 #Main function to detect regex and check if filter is needed
 #Input: dataframe df, optional list[str] columns
-def detect_regex(df, columns):
+def detect_regex(df, columns = None):
 
     detections_list = []
 
     #If columns is empty, take all columns
     if columns is None:
-        columns = df.select_dtypes().columns.tolist()
+        # columns = df.select_dtypes().columns.tolist()
+        columns = df.columns.tolist()
 
     #Iterate through each column/row and add detection object to detection_list if found
     for col in columns:

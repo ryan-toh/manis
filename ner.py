@@ -86,38 +86,38 @@ def detect_ner(
     return detections
 
 # Dummy dataset with examples that should trigger each label type
-df = pd.DataFrame({
-    "notes": [
-        "Barack Obama visited New York.",             # PERSON + GPE
-        "Google acquired a startup in Paris.",        # ORG + GPE
-        "Contact me at alice@example.com",            # EMAIL
-        "Call me at +1-202-555-0147",                 # PHONE
-        "My credit card number is 4111-1111-1111-1111", # CREDIT_CARD
-        "Server is at 192.168.0.1",                   # IP
-        "No sensitive data here."                     # Nothing
-    ],
-    "comments": [
-        "Meeting with Microsoft in London",           # ORG + GPE
-        "Elon Musk gave a talk in California",        # PERSON + LOCATION
-        "Support email: support@company.org",         # EMAIL
-        "Phone: (555) 123-4567",                      # PHONE
-        "Visa card: 5555-4444-3333-2222",             # CREDIT_CARD
-        "API endpoint at 10.0.0.42",                  # IP
-        "Plain text comment"                          # Nothing
-    ]
-})
+# df = pd.DataFrame({
+#     "notes": [
+#         "Barack Obama visited New York.",             # PERSON + GPE
+#         "Google acquired a startup in Paris.",        # ORG + GPE
+#         "Contact me at alice@example.com",            # EMAIL
+#         "Call me at +1-202-555-0147",                 # PHONE
+#         "My credit card number is 4111-1111-1111-1111", # CREDIT_CARD
+#         "Server is at 192.168.0.1",                   # IP
+#         "No sensitive data here."                     # Nothing
+#     ],
+#     "comments": [
+#         "Meeting with Microsoft in London",           # ORG + GPE
+#         "Elon Musk gave a talk in California",        # PERSON + LOCATION
+#         "Support email: support@company.org",         # EMAIL
+#         "Phone: (555) 123-4567",                      # PHONE
+#         "Visa card: 5555-4444-3333-2222",             # CREDIT_CARD
+#         "API endpoint at 10.0.0.42",                  # IP
+#         "Plain text comment"                          # Nothing
+#     ]
+# })
 
 
-# Run detection
-nlp = load_ner()
-detections = detect_ner(
-    df=df,
-    text_columns=["notes", "comments"],
-    model=nlp,
-    labels=("PERSON", "ORG", "GPE")  # for NER part
-)
+# # Run detection
+# nlp = load_ner()
+# detections = detect_ner(
+#     df=df,
+#     text_columns=["notes", "comments"],
+#     model=nlp,
+#     labels=("PERSON", "ORG", "GPE")  # for NER part
+# )
 
-# Show results
-for d in detections:
-    print(d)
+# # Show results
+# for d in detections:
+#     print(d)
 
