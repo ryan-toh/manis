@@ -1,5 +1,5 @@
 Who does what (5 people, 5 branches)
-Person A — Project setup + CLI
+Person A — Project setup + CLI POH WEI HAO
 Branch name: feat/setup-and-cli
 
 
