@@ -71,7 +71,7 @@ A (setup/CLI)
 B (read-csv)
     read_csv(path) and optional sample_rows(n)
     Handles “file not found” nicely
-C (regex-pii)
+C (regex-pii) (Qi Heng)
     Functions like find_emails, find_phones, find_credit_cards, find_ips
     Return positions or matched strings for redaction
 D (redact)
