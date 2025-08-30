@@ -29,7 +29,7 @@ jobs:
           python -m spacy download en_core_web_sm
 
       # --- Build Windows .exe
-      - name: Build Windows EXE
+      - name: Build Windows EXE (with splash)
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
@@ -38,9 +38,7 @@ jobs:
             --windowed `
             --onefile `
             --collect-all spacy `
-            --collect-all en_core_web_sm `
-          # only works on windows
-            --splash .\assets\splash.png
+            --splash .\assets\logo.png
 
       # --- Build macOS .app
       - name: Build macOS .app
@@ -52,8 +50,6 @@ jobs:
             --onefile \
             --collect-all spacy \
             --collect-all en_core_web_sm
-          # Optional icon:
-          #   add: --icon ./assets/app.icns
 
       # --- Zip the .app for release
       - name: Zip macOS .app
