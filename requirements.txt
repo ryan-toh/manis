@@ -4,3 +4,4 @@ Pillow==11.3.0
 pytest==8.4.1
 spacy==3.8.7
 transformers==4.56.0
+torch==2.8.0

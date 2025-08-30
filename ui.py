@@ -29,12 +29,12 @@ class RedactorGUI(tk.Tk):
         root.pack(fill="both", expand=True)
 
         # Logo
-        img = Image.open("logo.png")
-        img = img.resize((685, 100))
-        img = ImageTk.PhotoImage(img)
-        logo_row = tk.Label(root, image = img)
-        logo_row.image = img
-        logo_row.pack(side = "top", fill = "both", expand = "no", pady=(0,10))
+        # img = Image.open("logo.png")
+        # img = img.resize((685, 100))
+        # img = ImageTk.PhotoImage(img)
+        # logo_row = tk.Label(root, image = img)
+        # logo_row.image = img
+        # logo_row.pack(side = "top", fill = "both", expand = "no", pady=(0,10))
 
         # Input
         in_row = ttk.Frame(root)
