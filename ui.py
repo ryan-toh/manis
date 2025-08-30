@@ -4,6 +4,9 @@ from tkinter import ttk, filedialog, messagebox
 from tkinter import scrolledtext
 from functions.sanitize import sanitize_file
 from PIL import ImageTk, Image
+import sys
+import pyi_splash 
+
 
 
 class RedactorGUI(tk.Tk):
@@ -242,5 +245,9 @@ class RedactorGUI(tk.Tk):
 
 
 if __name__ == "__main__":
+    if getattr(sys, "frozen", False):
+    # provided by PyInstaller bootloader
+    # later, when your main window is ready:
+        pyi_splash.close()
     app = RedactorGUI()
     app.mainloop()
