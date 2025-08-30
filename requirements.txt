@@ -1,0 +1,4 @@
+numpy==2.3.2
+pandas==2.3.2
+pytest==8.4.1
+spacy==3.8.7
