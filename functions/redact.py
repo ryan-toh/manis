@@ -71,8 +71,7 @@ def _apply_cell(text: str, spans: List[Detection], token: str) -> Tuple[str, int
     spans_sorted = sorted(spans, key=lambda d: d.start, reverse=True)
     replaced = 0
     for d in spans_sorted:
-        # Guard against pathological indices; upstream should prevent this,
-        # but we keep it defensive in case of unexpected input.
+        # Guard against pathological indices in case of unexpected input.
         s, e = max(0, d.start), max(0, d.end)
         if s >= e or s >= len(text):
             continue
