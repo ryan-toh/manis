@@ -1,0 +1,42 @@
+name: Build Windows EXE
+
+on:
+  push:          # build on every push
+  workflow_dispatch:  # and allow manual runs from the Actions tab
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: manis   # <-- your code lives in /manis
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller spacy
+          python -m spacy download en_core_web_sm
+
+      - name: Build EXE from ui.py
+        run: |
+          pyinstaller .\ui.py `
+            --name MANIS-PII-Redactor `
+            --windowed `
+            --onefile `
+            --collect-all spacy `
+            --collect-all en_core_web_sm
+
+      - name: Upload the exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: MANIS-PII-Redactor-win
+          path: manis/dist/**
