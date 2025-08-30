@@ -3,14 +3,15 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from tkinter import scrolledtext
 from functions.sanitize import sanitize_file
+from PIL import ImageTk, Image
 
 
 class RedactorGUI(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("CSV PII Redactor")
-        self.geometry("720x520")
-        self.minsize(680, 480)
+        self.geometry("720x720")
+        self.minsize(720, 520)
  
         # Variables
         self.input_path = tk.StringVar()
@@ -26,6 +27,14 @@ class RedactorGUI(tk.Tk):
     def _build_ui(self):
         root = ttk.Frame(self, padding=16)
         root.pack(fill="both", expand=True)
+
+        # Logo
+        img = Image.open("logo.png")
+        img = img.resize((685, 100))
+        img = ImageTk.PhotoImage(img)
+        panel = tk.Label(root, image = img)
+        panel.image = img
+        panel.pack(side = "top", fill = "both", expand = "no")
 
         # Input
         in_row = ttk.Frame(root)
