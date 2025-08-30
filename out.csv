@@ -1,8 +1,17 @@
 notes,comments
-[PERSON] visited New York.,Meeting with Microsoft in London
-Google acquired a startup in Paris.,[PERSON] gave a talk in California
-Contact me at [EMAIL],Support email: [EMAIL]
-Call me at +1-[PHONE]-[PHONE]-0[PHONE],Phone: ([PHONE]) [PHONE]-[PHONE]
-My credit card number is [CREDIT_CARD],Visa card: [CREDIT_CARD]
-Server is at [IP],API endpoint at [IP]
+[XXX] visited [XXX].,Meeting with [XXX] in [XXX]
+[XXX] acquired a startup in [XXX].,[XXX] gave a talk in [XXX]
+Contact me at [XXX],Support email: [XXX]
+Call me at +1-[XXX]-[XXX]-0[XXX],Phone: ([XXX]) [XXX]-[XXX]
+My credit card number is [XXX],[XXX] card: [XXX]
+Server is at [XXX],[XXX] endpoint at [XXX]
 No sensitive data here.,Plain text comment
+[XXX] attended a summit in [XXX].,Discussion with [XXX] in [XXX]
+[XXX] launched a new service in [XXX].,[XXX] spoke at an event in [XXX]
+Reach me via [XXX],Customer support email: [XXX]
+[XXX] for details,Office line: ([XXX]) [XXX]-[XXX]
+My debit card is [XXX],[XXX] ending [XXX]
+Database located at [XXX],Internal host responds at [XXX]
+Completely generic message here.,Another harmless statement
+my nric is t00000[XXX]H,
+this is a garbage nunber [XXX],

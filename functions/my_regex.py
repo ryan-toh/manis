@@ -1,7 +1,5 @@
 import re
-import pandas as pd
-from typing import List, Optional, Tuple
-from common import Detection
+from functions.common import Detection
 
 #Main function to detect regex and check if filter is needed
 #Input: dataframe df, optional list[str] columns
@@ -95,7 +93,7 @@ def find_ips(detection_list, text, col, rowid):
         detection_list.append(new_detection)
 
 #Goal: detect emails, phones, credit cards, IPs using regex.
-#Files: src/detect/regex.py, tests with a few fake examples.
+#Files: src/detect/my_regex.py, tests with a few fake examples.
 #Return positions or matched strings for redaction
 
 # from typing import List, Optional

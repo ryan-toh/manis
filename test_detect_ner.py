@@ -4,8 +4,8 @@ import pandas as pd
 import pytest
 
 # Adjust these imports to your package structure
-from ner import load_ner, detect_ner
-from common import Detection  # your dataclass: row, col, start, end, label, value
+from functions.ner import load_ner, detect_ner
+from functions.common import Detection  # your dataclass: row, col, start, end, label, value
 
 
 # ---------- Fixtures ----------
