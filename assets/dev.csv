@@ -1,0 +1,11 @@
+id,text,entities
+1,"Larry Page attended a conference in Tokyo.","[(0, 10, 'PERSON'), (36, 41, 'GPE')]"
+2,"Sergey Brin spoke in Moscow.","[(0, 11, 'PERSON'), (22, 28, 'GPE')]"
+3,"IBM partnered with Intel in Toronto.","[(0, 3, 'ORG'), (19, 24, 'ORG'), (28, 35, 'GPE')]"
+4,"Email me at support@company.org.","[(11, 32, 'EMAIL')]"
+5,"Call (212) 555-7890 tomorrow.","[(5, 19, 'PHONE')]"
+6,"Mastercard number 5105-1051-0510-5100 was declined.","[(18, 37, 'CREDIT_CARD')]"
+7,"The router has IP 203.0.113.45 configured.","[(17, 28, 'IP')]"
+8,"Jeff Bezos visited Madrid.","[(0, 10, 'PERSON'), (19, 25, 'GPE')]"
+9,"Apple held an event in San Francisco.","[(0, 5, 'ORG'), (23, 36, 'GPE')]"
+10,"Sheryl Sandberg gave a keynote in Zurich.","[(0, 15, 'PERSON'), (36, 42, 'GPE')]"

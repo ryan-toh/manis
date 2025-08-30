@@ -1,0 +1,10 @@
+{"text":"Larry Page attended a conference in Tokyo.","spans":[{"start":0,"end":10,"label":"PERSON"},{"start":36,"end":41,"label":"GPE"}]}
+{"text":"Sergey Brin spoke in Moscow.","spans":[{"start":0,"end":11,"label":"PERSON"},{"start":22,"end":28,"label":"GPE"}]}
+{"text":"IBM partnered with Intel in Toronto.","spans":[{"start":0,"end":3,"label":"ORG"},{"start":19,"end":24,"label":"ORG"},{"start":28,"end":35,"label":"GPE"}]}
+{"text":"Email me at support@company.org.","spans":[{"start":11,"end":32,"label":"EMAIL"}]}
+{"text":"Call (212) 555-7890 tomorrow.","spans":[{"start":5,"end":19,"label":"PHONE"}]}
+{"text":"Mastercard number 5105-1051-0510-5100 was declined.","spans":[{"start":18,"end":37,"label":"CREDIT_CARD"}]}
+{"text":"The router has IP 203.0.113.45 configured.","spans":[{"start":18,"end":30,"label":"IP"}]}
+{"text":"Jeff Bezos visited Madrid.","spans":[{"start":0,"end":10,"label":"PERSON"},{"start":19,"end":25,"label":"GPE"}]}
+{"text":"Apple held an event in San Francisco.","spans":[{"start":0,"end":5,"label":"ORG"},{"start":23,"end":36,"label":"GPE"}]}
+{"text":"Sheryl Sandberg gave a keynote in Zurich.","spans":[{"start":0,"end":15,"label":"PERSON"},{"start":34,"end":40,"label":"GPE"}]}

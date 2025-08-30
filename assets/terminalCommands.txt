@@ -1,0 +1,15 @@
+# TRAIN
+(.venv) PS> python fileConversions/csv_to_jsonl.py assets/trainingData.csv assets/train.jsonl
+
+# DEV
+(.venv) PS> python fileConversions/csv_to_jsonl.py assets/dev.csv assets/dev.jsonl
+
+# TRAIN
+(.venv) PS> python fileConversions/jsonl_to_spacy.py assets/train.jsonl assets/train.spacy
+
+# DEV
+(.venv) PS> python fileConversions/jsonl_to_spacy.py assets/dev.jsonl assets/dev.spacy
+
+
+TRAIN THE MODEL
+(.venv) PS> python -m spacy train configs/pii_tok2vec.cfg --output training/

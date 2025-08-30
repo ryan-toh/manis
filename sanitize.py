@@ -3,7 +3,7 @@ from typing import Optional
 import pandas as pd
 
 from ingest import read_csv, get_text_columns
-from regex import detect_regex
+from my_regex import detect_regex
 from ner import load_ner, detect_ner
 from redact import apply_redactions, dedupe_overlaps
 

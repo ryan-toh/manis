@@ -4,7 +4,7 @@ import numpy as np
 from common import Detection
 import spacy
 
-def load_ner(model_name: str = "en_core_web_sm"):
+def load_ner(model_name: str = "en_core_web_trf"): #"training/model-best"
     """
     Load and return the NER model (spaCy pipeline or similar).
     Input:  model_name -> spaCy model name
