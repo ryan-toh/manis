@@ -39,6 +39,8 @@ jobs:
             --onefile `
             --collect-all spacy `
             --collect-all en_core_web_sm
+          # only works on windows
+            --splash .\assets\splash.png
 
       # --- Build macOS .app
       - name: Build macOS .app
