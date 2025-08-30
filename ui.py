@@ -50,9 +50,9 @@ class RedactorGUI(tk.Tk):
         # Sample rows
         samp_row = ttk.Frame(opts)
         samp_row.pack(fill="x", padx=10, pady=(8, 4))
-        ttk.Label(samp_row, text="Sample rows (optional):").pack(side="left")
-        samp_entry = ttk.Entry(samp_row, width=12, textvariable=self.sample_rows)
-        samp_entry.pack(side="left", padx=(8, 0))
+        ttk.Label(samp_row, text="Sample rows:").pack(side="left")
+        samp_entry = ttk.Entry(samp_row, width=18, textvariable=self.sample_rows)
+        samp_entry.pack(side="left", padx=(47, 0))
         ttk.Label(
             samp_row, text="Leave blank to process all rows."
         ).pack(side="left", padx=(10, 0))
@@ -60,16 +60,19 @@ class RedactorGUI(tk.Tk):
         # Token
         token_row = ttk.Frame(opts)
         token_row.pack(fill="x", padx=10, pady=(4, 8))
-        ttk.Label(token_row, text="Replacement token (optional):").pack(side="left")
-        token_entry = ttk.Entry(token_row, width=24, textvariable=self.token)
+        ttk.Label(token_row, text="Replacement token:").pack(side="left")
+        token_entry = ttk.Entry(token_row, width=18, textvariable=self.token)
         token_entry.pack(side="left", padx=(8, 0))
+        ttk.Label(
+            token_row, text="Leave blank to use redaction categories as tokens."
+        ).pack(side="left", padx=(10,0))
 
         # NER toggle
         ner_row = ttk.Frame(opts)
         ner_row.pack(fill="x", padx=10, pady=(0, 10))
         ttk.Checkbutton(
             ner_row,
-            text="Disable NER (use_ner = False)",
+            text="Disable NER (Only use RegEx)",
             variable=self.no_ner,
         ).pack(side="left")
 
