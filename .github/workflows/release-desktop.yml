@@ -38,7 +38,7 @@ jobs:
             --windowed `
             --onefile `
             --collect-all spacy `
-            --collect-all en_core_web_sm
+            --collect-all en_core_web_sm `
           # only works on windows
             --splash .\assets\splash.png
 
