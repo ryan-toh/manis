@@ -38,6 +38,7 @@ jobs:
             --windowed `
             --onefile `
             --collect-all spacy `
+            --collect-all en_core_web_sm `
             --splash .\assets\logo.png
 
       # --- Build macOS .app
