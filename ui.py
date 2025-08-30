@@ -23,7 +23,7 @@ class RedactorGUI(tk.Tk):
         self._build_ui()
         self._set_busy(False)
 
-    # ---------- UI ----------
+    # UI
     def _build_ui(self):
         root = ttk.Frame(self, padding=16)
         root.pack(fill="both", expand=True)
@@ -85,7 +85,7 @@ class RedactorGUI(tk.Tk):
             variable=self.no_ner,
         ).pack(side="left")
 
-        # Run / progress
+        # Run/progress
         run_row = ttk.Frame(root)
         run_row.pack(fill="x", pady=(0, 10))
         self.run_btn = ttk.Button(run_row, text="Run Redaction", command=self._on_run_click)
@@ -112,7 +112,7 @@ class RedactorGUI(tk.Tk):
                 style.theme_use(theme)
                 break
 
-    # ---------- Handlers ----------
+    # Handlers
     def _browse_input(self):
         path = filedialog.askopenfilename(
             title="Select input CSV",
@@ -186,7 +186,7 @@ class RedactorGUI(tk.Tk):
         threading.Thread(target=worker, daemon=True).start()
 
     def _post_success(self, summary_text):
-        # jump back to main thread
+        # Jump back to main thread
         self.after(0, lambda: self._on_done(summary_text=summary_text, error=None))
 
     def _post_error(self, err):
