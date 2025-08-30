@@ -38,7 +38,7 @@ def sanitize_file(
     text_cols = get_text_columns(df)
 
     # 4) NER detections
-    ner_hits = detect_ner(df, text_cols, model=load_ner()) if use_ner else []
+    ner_hits = detect_ner(df, text_cols, labels=("PERSON", "NORP"),model=load_ner()) if use_ner else []
 
     # 5) Combine + dedupe overlaps
     hits = dedupe_overlaps(regex_hits + ner_hits)
