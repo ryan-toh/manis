@@ -21,35 +21,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      # --- Debug: show where we are and contents
-      - name: Show repo root
-        if: runner.os == 'Windows'
-        shell: pwsh
+      # --- Install dependencies
+      - name: Install dependencies
         run: |
-          pwd
-          Get-ChildItem
-      - name: Show repo root
-        if: runner.os != 'Windows'
-        run: |
-          pwd
-          ls -la
-
-      # --- Install deps (Windows)
-      - name: Install deps (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          cd manis
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pyinstaller spacy
-          python -m spacy download en_core_web_sm
-
-      # --- Install deps (macOS)
-      - name: Install deps (macOS)
-        if: runner.os == 'macOS'
-        run: |
-          cd manis
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pyinstaller spacy
@@ -60,7 +34,6 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          cd manis
           pyinstaller .\ui.py `
             --name MANIS-PII-Redactor `
             --windowed `
@@ -72,33 +45,23 @@ jobs:
       - name: Build macOS .app
         if: runner.os == 'macOS'
         run: |
-          cd manis
           pyinstaller ./ui.py \
             --name "MANIS-PII-Redactor" \
             --windowed \
             --onefile \
             --collect-all spacy \
             --collect-all en_core_web_sm
-          # Optional icon (requires file at manis/assets/app.icns):
-          #   add: --icon ./assets/app.icns
+          # Optional: add --icon ./assets/app.icns if you have an icon
 
-      # --- Show dist
-      - name: Show dist files (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          ls manis/dist
-
-      - name: Show dist files (macOS)
-        if: runner.os == 'macOS'
-        run: |
-          ls -R manis/dist
+      # --- Show dist contents
+      - name: Show dist files
+        run: ls -R dist
 
       # --- Zip the .app for easier download
       - name: Zip macOS .app
         if: runner.os == 'macOS'
         run: |
-          cd manis/dist
+          cd dist
           ditto -c -k --sequesterRsrc --keepParent "MANIS-PII-Redactor.app" "MANIS-PII-Redactor.app.zip"
 
       # --- Upload artifacts
@@ -107,11 +70,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MANIS-PII-Redactor-win
-          path: manis/dist/MANIS-PII-Redactor.exe
+          path: dist/MANIS-PII-Redactor.exe
 
       - name: Upload macOS .app (zip)
         if: runner.os == 'macOS'
         uses: actions/upload-artifact@v4
         with:
           name: MANIS-PII-Redactor-mac
-          path: manis/dist/MANIS-PII-Redactor.app.zip
+          path: dist/MANIS-PII-Redactor.app.zip
