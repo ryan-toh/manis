@@ -17,22 +17,7 @@ def sanitize_file(
         token: str = "[REDACTED]",
         intersection: bool = False
 ) -> dict:
-    """
-    End-to-end sanitization pipeline.
 
-    Args:
-        input_path: path to the input CSV file
-        output_path: path to write the redacted CSV
-        sample_rows: optionally restrict to first N rows
-        use_ner: whether to run NER (spaCy + HF) in addition to regex
-        use_spacy: run spaCy NER
-        use_hf: run HuggingFace NER
-        token: replacement string for redactions
-        intersection: if True, only keep overlapping detections (spaCy ∩ HF)
-
-    Returns:
-        RedactionSummary dict
-    """
     # 1) Load data
     df = read_csv(input_path, sample_rows)
 
