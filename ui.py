@@ -11,7 +11,7 @@ class RedactorGUI(tk.Tk):
         self.title("CSV PII Redactor")
         self.geometry("720x520")
         self.minsize(680, 480)
-
+ 
         # Variables
         self.input_path = tk.StringVar()
         self.output_path = tk.StringVar()
