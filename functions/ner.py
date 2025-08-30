@@ -5,14 +5,12 @@ from functions.common import Detection
 import spacy
 from transformers import AutoTokenizer, AutoModelForTokenClassification, pipeline
 
-# ---------------------------
-# spaCy loader + detection
-# ---------------------------
+
+# spacy loader + detection
 
 def load_spacy(model_name: str = "en_core_web_sm"):
     """Load a spaCy NER model."""
     return spacy.load(model_name)
-
 
 def detect_spacy(
         df: pd.DataFrame,
@@ -51,16 +49,14 @@ def detect_spacy(
     return detections
 
 
-# ---------------------------
+
 # HuggingFace loader + detection
-# ---------------------------
 
 def load_hf(model_name: str = "dslim/bert-large-NER"):
     """Load a HuggingFace NER pipeline."""
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForTokenClassification.from_pretrained(model_name)
     return pipeline("ner", model=model, tokenizer=tokenizer, aggregation_strategy="simple")
-
 
 def detect_hf(
         df: pd.DataFrame,
