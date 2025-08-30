@@ -77,14 +77,20 @@ def _apply_cell(text: str, spans: List[Detection], token: str) -> Tuple[str, int
         if s >= e or s >= len(text):
             continue
         e = min(e, len(text))
-        text = text[:s] + token + text[e:]
+
+        # Replace phrase with the detection label if token is empty
+        if token == "":
+            text = text[:s] + "[" + d.label + "]" + text[e:]
+        else:
+            text = text[:s] + token + text[e:]
+
         replaced += 1
     return text, replaced
 
 def apply_redactions(
         df: pd.DataFrame,
         detections: List[Detection],
-        token: str = "[REDACTED]",
+        token: str = "",
 ) -> Tuple[pd.DataFrame, RedactionSummary]:
 
     out = df.copy()

@@ -43,7 +43,7 @@ def find_emails(detection_list, text, col, rowid):
             col = col,
             start = match.start(),
             end = match.end(),
-            label = "email",
+            label = "EMAIL",
             value = match.group()
         )
         detection_list.append(new_detection)
@@ -59,7 +59,7 @@ def find_phones(detection_list, text, col, rowid):
             col = col,
             start = match.start(),
             end = match.end(),
-            label = "phone",
+            label = "PHONE",
             value = match.group()
         )
         detection_list.append(new_detection)
@@ -74,7 +74,7 @@ def find_credit_cards(detection_list, text, col, rowid):
             col = col,
             start = match.start(),
             end = match.end(),
-            label = "credit_card",
+            label = "CREDIT_CARD",
             value = match.group()
         )
         detection_list.append(new_detection)
@@ -89,7 +89,7 @@ def find_ips(detection_list, text, col, rowid):
             col = col,
             start = match.start(),
             end = match.end(),
-            label = "ip",
+            label = "IP",
             value = match.group()
         )
         detection_list.append(new_detection)

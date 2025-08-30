@@ -17,7 +17,7 @@ class RedactorGUI(tk.Tk):
         self.output_path = tk.StringVar()
         self.sample_rows = tk.StringVar()  # keep as string; we'll validate/convert
         self.no_ner = tk.BooleanVar(value=False)
-        self.token = tk.StringVar(value="[REDACTED]")
+        self.token = tk.StringVar(value="")
 
         self._build_ui()
         self._set_busy(False)
@@ -60,7 +60,7 @@ class RedactorGUI(tk.Tk):
         # Token
         token_row = ttk.Frame(opts)
         token_row.pack(fill="x", padx=10, pady=(4, 8))
-        ttk.Label(token_row, text="Replacement token:").pack(side="left")
+        ttk.Label(token_row, text="Replacement token (optional):").pack(side="left")
         token_entry = ttk.Entry(token_row, width=24, textvariable=self.token)
         token_entry.pack(side="left", padx=(8, 0))
 
