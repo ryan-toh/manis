@@ -4,8 +4,7 @@ from tkinter import ttk, filedialog, messagebox
 from tkinter import scrolledtext
 from functions.sanitize import sanitize_file
 from PIL import ImageTk, Image
-import sys
-import pyi_splash 
+import sys 
 
 
 
@@ -248,6 +247,10 @@ if __name__ == "__main__":
     if getattr(sys, "frozen", False):
     # provided by PyInstaller bootloader
     # later, when your main window is ready:
-        pyi_splash.close()
+        try:
+            import pyi_splash
+            pyi_splash.close()
+        except:
+            pass
     app = RedactorGUI()
     app.mainloop()
