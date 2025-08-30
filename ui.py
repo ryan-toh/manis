@@ -61,7 +61,7 @@ class RedactorGUI(tk.Tk):
         samp_row.pack(fill="x", padx=10, pady=(8, 4))
         ttk.Label(samp_row, text="Sample rows:").pack(side="left")
         samp_entry = ttk.Entry(samp_row, width=18, textvariable=self.sample_rows)
-        samp_entry.pack(side="left", padx=(47, 0))
+        samp_entry.pack(side="left", padx=(43, 0))
         ttk.Label(
             samp_row, text="Leave blank to process all rows."
         ).pack(side="left", padx=(10, 0))
