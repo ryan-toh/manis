@@ -95,7 +95,7 @@ def find_ips(detection_list, text, col, rowid):
         detection_list.append(new_detection)
 
 #Goal: detect emails, phones, credit cards, IPs using regex.
-#Files: src/detect/regex.py, tests with a few fake examples.
+#Files: src/detect/my_regex.py, tests with a few fake examples.
 #Return positions or matched strings for redaction
 
 # from typing import List, Optional

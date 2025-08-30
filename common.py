@@ -42,7 +42,7 @@ RedactionSummary = Dict[str, Dict[str, int]]
 #     """
 
 
-### regex.py
+### my_regex.py
 # from typing import List, Optional
 # import pandas as pd
 # from .types import Detection  # or import Detection from a shared place
