@@ -30,7 +30,7 @@ class RedactorGUI(tk.Tk):
         # Input
         in_row = ttk.Frame(root)
         in_row.pack(fill="x", pady=(0, 10))
-        ttk.Label(in_row, text="Input CSV:").pack(side="left", padx=(0, 8))
+        ttk.Label(in_row, text="Input CSV:").pack(side="left", padx=(0, 19))
         in_entry = ttk.Entry(in_row, textvariable=self.input_path)
         in_entry.pack(side="left", fill="x", expand=True)
         ttk.Button(in_row, text="Browse…", command=self._browse_input).pack(side="left", padx=(8, 0))
@@ -85,14 +85,6 @@ class RedactorGUI(tk.Tk):
         ttk.Label(root, text="Redaction summary:").pack(anchor="w")
         self.summary = scrolledtext.ScrolledText(root, height=12, wrap="word")
         self.summary.pack(fill="both", expand=True)
-
-        # Footer (hint)
-        foot = ttk.Label(
-            root,
-            foreground="#555555",
-            text="Tip: same behavior as your CLI tool — options mapped 1:1.",
-        )
-        foot.pack(anchor="w", pady=(6, 0))
 
         # Style polish
         try:
@@ -195,9 +187,20 @@ class RedactorGUI(tk.Tk):
             return
         if summary_text is None:
             summary_text = "(No summary returned.)"
-        self.summary.insert("1.0", str(summary_text))
+        self.summary.insert("1.0", self._decode_summary(summary_text))
         self.summary.see("1.0")
         messagebox.showinfo("Completed", "Redaction finished.")
+        
+    def _decode_summary(self, summary_text):
+        summary = "TOTAL REDACTION COUNT:\n" + \
+            str(summary_text["total"]["count"]) + "\n\n" + \
+            "REDACTION COUNT BY CATEGORY:\n"
+        for entry in summary_text["by_label"]:
+            summary += entry + ": " + str(summary_text["by_label"][entry]) +"\n"
+        summary += "\nREDACTION COUNT BY COLUMN:\n"
+        for entry in summary_text["by_column"]:
+            summary += entry + ": " + str(summary_text["by_column"][entry]) +"\n"
+        return summary
 
     def _set_busy(self, busy: bool):
         state = "disabled" if busy else "normal"
