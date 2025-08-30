@@ -1,7 +1,7 @@
-from typing import Iterable, List, Tuple
+from typing import Iterable, List
 import pandas as pd
 import numpy as np
-from common import Detection
+from functions.common import Detection
 import spacy
 from transformers import AutoTokenizer, AutoModelForTokenClassification, pipeline
 

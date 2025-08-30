@@ -1,11 +1,10 @@
 import argparse
 from typing import Optional
-import pandas as pd
 
-from ingest import read_csv, get_text_columns
-from my_regex import detect_regex
-from ner import load_spacy, detect_spacy, load_hf, detect_hf
-from redact import apply_redactions, dedupe_overlaps
+from functions.ingest import read_csv, get_text_columns
+from functions.my_regex import detect_regex
+from functions.ner import load_spacy, detect_spacy, load_hf, detect_hf
+from functions.redact import apply_redactions, dedupe_overlaps
 
 
 def sanitize_file(

@@ -2,7 +2,7 @@ import threading
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from tkinter import scrolledtext
-from sanitize import sanitize_file
+from functions.sanitize import sanitize_file
 
 
 class RedactorGUI(tk.Tk):

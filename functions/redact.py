@@ -4,7 +4,7 @@ from typing import Dict, List, Tuple
 from collections import Counter, defaultdict
 import pandas as pd
 
-from common import Detection, RedactionSummary
+from functions.common import Detection, RedactionSummary
 
 def _length(d: Detection) -> int:
     return d.end - d.start
